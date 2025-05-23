@@ -98,6 +98,11 @@ INSERT INTO DOCK (station, state, scooter, version) VALUES
 (3, 'occupy', 3, now()),
 (3, 'under maintenance', NULL, now()),
 (4, 'occupy', 4, now()),
+(4, 'free', NULL, now()),
+-- Additional empty docks for testing
+(1, 'free', NULL, now()),
+(2, 'free', NULL, now()),
+(3, 'free', NULL, now()),
 (4, 'free', NULL, now());
 
 -- Insert sample REPLACEMENTORDER data

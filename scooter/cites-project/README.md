@@ -1,4 +1,4 @@
-# Multi-Module Project with Maven
+``````# Multi-Module Project with Maven
 
 This directory contains a multi-module project managed by [Apache Maven](https://maven.apache.org). It consists of three modules: `dal`, `model`, and `app`.
 
@@ -21,7 +21,7 @@ The `app` module is the main application module that brings together the functio
 To build the project, run the following command in the root directory:
 
 ```bash
-mvn clean package
+mvn clean package``
 ```
 
 This command will compile, test, and package all the modules.

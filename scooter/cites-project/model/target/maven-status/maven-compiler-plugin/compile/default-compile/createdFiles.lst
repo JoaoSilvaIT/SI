@@ -1,4 +1,4 @@
-isel\sisinf\model\Dock.class
-isel\sisinf\model\Core.class
-isel\sisinf\model\Scooter.class
-isel\sisinf\model\Rider.class
+isel/sisinf/model/Scooter.class
+isel/sisinf/model/Core.class
+isel/sisinf/model/Rider.class
+isel/sisinf/model/Dock.class

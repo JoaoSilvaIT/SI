@@ -14,7 +14,9 @@ public class DockRepository {
     public List<Dock> getAllDocks() {
         EntityManager em = emf.createEntityManager();
         try {
-            return em.createQuery("SELECT d FROM Dock d", Dock.class).getResultList();
+            return em.createQuery("SELECT d FROM Dock d", Dock.class)
+                .setHint("jakarta.persistence.cache.storeMode", "REFRESH")
+                .getResultList();
         } finally {
             em.close();
         }
