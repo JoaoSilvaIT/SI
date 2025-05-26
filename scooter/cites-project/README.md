@@ -31,10 +31,6 @@ To additionally run the application, execute:
 mvn clean verify
 ```
 
-```bash
-mvn clean test
-```
-
 This command will also start the application.
 
 To skip the test (once properly tested) use:

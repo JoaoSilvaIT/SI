@@ -14,7 +14,6 @@
             <property name="jakarta.persistence.jdbc.user" value="t44dg70"/>
             <property name="jakarta.persistence.jdbc.password" value="t44dg70"/>
             <property name="jakarta.persistence.schema-generation.database.action" value="none"/>
-            <property name="eclipselink.logging.level" value="FINE"/>
             <property name="eclipselink.id-validation" value="NULL"/>
         </properties>
     </persistence-unit>
