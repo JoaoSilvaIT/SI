@@ -2,6 +2,7 @@ package isel.sisinf.jpa;
 
 import isel.sisinf.model.Dock;
 import jakarta.persistence.*;
+
 import java.util.List;
 
 public class DockRepository {
@@ -15,8 +16,8 @@ public class DockRepository {
         EntityManager em = emf.createEntityManager();
         try {
             return em.createQuery("SELECT d FROM Dock d", Dock.class)
-                .setHint("jakarta.persistence.cache.storeMode", "REFRESH")
-                .getResultList();
+                    .setHint("jakarta.persistence.cache.storeMode", "REFRESH")
+                    .getResultList();
         } finally {
             em.close();
         }
@@ -35,8 +36,8 @@ public class DockRepository {
         EntityManager em = emf.createEntityManager();
         try {
             Object result = em.createNativeQuery("SELECT fx_dock_occupancy(?1)")
-                .setParameter(1, stationId)
-                .getSingleResult();
+                    .setParameter(1, stationId)
+                    .getSingleResult();
             return ((java.math.BigDecimal) result).doubleValue();
         } finally {
             em.close();
@@ -72,10 +73,12 @@ public class DockRepository {
         EntityTransaction tx = em.getTransaction();
         try {
             tx.begin();
-            em.createNativeQuery("CALL startTrip(?1, ?2)")
-                .setParameter(1, dockId)
-                .setParameter(2, clientId)
-                .executeUpdate();
+            em.createStoredProcedureQuery("startTrip")
+                    .registerStoredProcedureParameter(1, Integer.class, ParameterMode.IN)
+                    .registerStoredProcedureParameter(2, Integer.class, ParameterMode.IN)
+                    .setParameter(1, dockId)
+                    .setParameter(2, clientId)
+                    .execute();
             tx.commit();
         } catch (PersistenceException e) {
             if (tx.isActive()) tx.rollback();
