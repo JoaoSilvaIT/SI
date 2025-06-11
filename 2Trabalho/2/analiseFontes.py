@@ -3,10 +3,6 @@ import collections
 import math
 
 def analisar_ficheiro(caminho_ficheiro):
-    """
-    Analisa um ficheiro, calcula o seu tamanho e entropia.
-    (Função baseada no seu ficheiro 'analiseFontes.py')
-    """
     try:
         tamanho = os.path.getsize(caminho_ficheiro)
         if tamanho == 0:

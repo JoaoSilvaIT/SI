@@ -2,7 +2,7 @@ const int N_FIBONACCI = 15; // Quantos números Fibonacci enviar
 
 byte calcularCRC8(const char *data, int len) {
   byte crc = 0x00; // Valor inicial do CRC
-  const byte polinomio = 0x07; 
+  const byte polinomio = 0x0B; 
 
   for (int j = 0; j < len; j++) {
     crc ^= data[j]; // XOR com o próximo byte de dados

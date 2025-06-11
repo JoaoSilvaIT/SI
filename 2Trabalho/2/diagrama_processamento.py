@@ -1,6 +1,4 @@
 import os
-import math
-import collections
 import random
 import shutil
 from analiseFontes import analisar_ficheiro 
@@ -11,12 +9,8 @@ def codificador_fonte(caminho_entrada, caminho_saida):
     shutil.copy(caminho_entrada, caminho_saida)
 
 def descodificador_fonte(caminho_entrada, caminho_saida):
-    """TODO"""
+    "TODO"
     shutil.copy(caminho_entrada, caminho_saida)
-
-# =============================================================================
-# Bloco 3: Funções de Canal (do Exercício 1)
-# =============================================================================
 
 def read_bits(file_path):
     with open(file_path, 'rb') as f:
@@ -58,11 +52,7 @@ def simular_canal_bsc(c_e, c_s, p):
                 if bit: byte_mod |= (1 << i)
             f_out.write(byte_mod.to_bytes(1, 'big'))
 
-# =============================================================================
-# Script Principal: Orquestrador do Processo Completo
-# =============================================================================
 if __name__ == "__main__":
-    # --- Configurações da Simulação ---
     FICHEIRO_ENTRADA_A = "alice29.txt"
     CHAVE_VIGENERE = "SEGURANCA"
     PROBABILIDADE_BSC = 0.01
